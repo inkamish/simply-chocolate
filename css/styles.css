@@ -84,12 +84,11 @@ img {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  padding: 14px 0;
 }
 
 .menu-icon {
-  fill: white;
-  stroke-width: 2px;
-  stroke: #111111;
+  fill: black;
 }
 
 .social-link {
@@ -136,6 +135,84 @@ img {
   }
 }
 
+/* --------------------------------- */
+
+/* ------------Mobile menu----------- */
+.overlay {
+  background-color: #1111116c;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  overflow: auto;
+}
+
+.mob-menu {
+  position: relative;
+  width: 320px;
+  padding: 20px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(30, 24, 35, 1);
+}
+
+.close-menu-btn {
+  position: absolute;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+
+.close-icon {
+  stroke: #ffffff;
+}
+
+.nav-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 130px;
+}
+
+.nav-link.mobile {
+  color: #ffffff;
+}
+
+.nav-link.mobile.is-current {
+  color: #fd9222;
+}
+
+.social-mobile {
+  display: flex;
+  gap: 12px;
+}
+
+.socials-icon.mobile {
+  stroke: white;
+}
 /* --------------------------------- */
 
 /* -------------Hero---------------- */

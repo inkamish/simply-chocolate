@@ -22,6 +22,48 @@
   </head>
   <body>
     <header class="header">
+      <div class="overlay" data-menu>
+        <div class="mob-menu">
+          <button class="close-menu-btn" type="button" data-menu-close>
+            <svg class="close-icon" width="14" height="14">
+              <use href="./img/sprite.svg#icon-x-close"></use>
+            </svg>
+          </button>
+          <ul class="nav-mobile">
+            <li class="nav-item"><a class="nav-link mobile is-current" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link mobile" href="#made">How it's made?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mobile" href="#loved">Chocolate is loved</a>
+            </li>
+          </ul>
+          <ul class="social-mobile">
+            <li class="social-item">
+              <a href="https://www.instagram.com/" class="social-link" target="_blank"
+                ><span
+                  ><svg class="socials-icon mobile" width="24" height="24">
+                    <use href="./img/sprite.svg#icon-instagram"></use></svg></span
+              ></a>
+            </li>
+            <li class="social-item">
+              <a class="social-link" href="https://www.instagram.com/" target="_blank"
+                ><span
+                  ><svg class="socials-icon mobile" width="24" height="24">
+                    <use href="./img/sprite.svg#icon-facebook"></use></svg></span
+              ></a>
+            </li>
+            <li class="social-item">
+              <a class="social-link" href="https://www.instagram.com/" target="_blank"
+                ><span
+                  ><svg class="socials-icon mobile" width="24" height="24">
+                    <use href="./img/sprite.svg#icon-x"></use></svg></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="container">
         <nav class="nav">
           <a class="logo" href="index.html"
@@ -62,9 +104,9 @@
               ></a>
             </li>
           </ul>
-          <button class="menu-btn">
+          <button class="menu-btn" data-menu-open>
             <svg class="menu-icon" width="17" height="14.5">
-              <use href="./images/icons.svg#menu"></use>
+              <use href="./img/sprite.svg#menu"></use>
             </svg>
           </button>
         </nav>
@@ -670,5 +712,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobmenu.js"></script>
   </body>
 </html>
