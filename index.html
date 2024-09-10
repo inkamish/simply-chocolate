@@ -30,8 +30,8 @@
               <svg class="logo-icon" width="21" height="21">
                 <use href="./img/sprite.svg#icon-logo"></use></svg></span
           ></a>
-          <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <ul class="nav-list hide-mobile">
+            <li class="nav-item"><a class="nav-link is-current" href="#home">Home</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#made">How it's made?</a>
             </li>
@@ -39,7 +39,7 @@
               <a class="nav-link" href="#loved">Chocolate is loved</a>
             </li>
           </ul>
-          <ul class="social-header">
+          <ul class="social-header hide-mobile">
             <li class="social-item">
               <a href="https://www.instagram.com/" class="social-link" target="_blank"
                 ><span
@@ -73,7 +73,7 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
             Treat yourself or a loved one to our finest ingredients for a moment of pure delight!
@@ -93,7 +93,7 @@
     </section>
     <!-- Advantages -->
     <section class="advantages">
-      <div class="container">
+      <div class="container advantages-container">
         <h2 class="hidden-title">Advantages</h2>
         <ul class="advantages-list">
           <li class="advantages-item">
@@ -141,14 +141,13 @@
     </section>
     <!-- Ingredients -->
     <section class="ingredients">
-      <div class="container">
+      <div class="container ingredients-container">
         <h2 class="ingredients-title title">
           IT ALL ADDS UP TO ONE EXCEPTIONAL
           <span class="orange-span">TASTE</span> SENSATION
         </h2>
         <ul class="ingredients-list">
           <li class="ingredients-card chocolate">
-            <input type="checkbox" id="flip-checkbox" class="flip-checkbox" />
             <div class="front-card chocolate">
               <svg class="ingridients-item-icon" width="24" height="24">
                 <use href="./img/sprite.svg#icon-arrows-right"></use>
@@ -515,15 +514,33 @@
         <h2 class="sellers-title title"><span class="orange-span">Top</span> Sellers</h2>
         <ul class="sellers-list">
           <li class="sellers-card">
-            <img class="sellers-card-img" src="./img/top-min.jpg" alt="" width="368" />
+            <picture class="sellers-card-img">
+              <source
+                srcset="./img/sellers-nuts-min.jpg 1x, ./img/sellers-nuts@2x-min.jpg 2x"
+                media="(min-width: 768px)"
+              />
+              <img src="./img/sellers-nuts-min.jpg" alt="" width="368" />
+            </picture>
             <h3 class="sellers-cards-title">CHOCOLATE WITH NUTS</h3>
           </li>
           <li class="sellers-card hide-mobile">
-            <img class="sellers-card-img" src="./img/top-min.jpg" alt="" width="368" />
+            <picture class="sellers-card-img">
+              <source
+                srcset="./img/sellers-fruits-min.jpg 1x, ./img/sellers-fruits@2x-min.jpg 2x"
+                media="(min-width: 768px)"
+              />
+              <img src="./img/sellers-fruits-min.jpg" alt="" width="368" />
+            </picture>
             <h3 class="sellers-cards-title">CHOCOLATE WITH FRUITS</h3>
           </li>
           <li class="sellers-card hide-mobile">
-            <img class="sellers-card-img" src="./img/top-min.jpg" alt="" width="368" />
+            <picture class="sellers-card-img">
+              <source
+                srcset="./img/sellers-dark-min.jpg 1x, ./img/sellers-dark@2x-min.jpg 2x"
+                media="(min-width: 768px)"
+              />
+              <img src="./img/sellers-dark-min.jpg" alt="" width="368" />
+            </picture>
             <h3 class="sellers-cards-title">DARK CHOCOLATE</h3>
           </li>
         </ul>
@@ -582,7 +599,7 @@
       </div>
     </section>
     <footer class="footer" id="footer">
-      <div class="container">
+      <div class="container footer-container">
         <div class="footer-top-part">
           <h2 class="footer-title">
             <span class="orange-span">Chocolate</span> a delicious cure for a bad day

@@ -68,13 +68,12 @@ img {
   stroke: #fd9222;
 }
 
-.nav-list,
-.social-header {
-  display: none;
-}
-
 .nav-link {
   font-weight: 500;
+}
+
+.nav-link.is-current {
+  color: #fd9222;
 }
 
 .menu-btn {
@@ -91,6 +90,14 @@ img {
   fill: white;
   stroke-width: 2px;
   stroke: #111111;
+}
+
+.social-link {
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover .socials-icon {
+  stroke: rgba(253, 146, 34, 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -119,6 +126,7 @@ img {
     fill: white;
     stroke-width: 1.5px;
     stroke: #111111;
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -135,7 +143,7 @@ img {
   padding-bottom: 80px;
 }
 
-.hero .container {
+.hero-container {
   background-image: url(../img/hero-bg-mobile-min.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,6 +153,12 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+@media (min-resolution: 192dpi) {
+  .hero-container {
+    background-image: url(../img/hero-bg-mobile-2x-min.jpg);
+  }
 }
 
 .hero-title {
@@ -164,6 +178,13 @@ img {
 .hero-btn-link {
   background-color: transparent;
   border: solid 1px white;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn-link:hover {
+  color: #fd9222;
+  border-color: #fd9222;
 }
 
 .scroll {
@@ -173,6 +194,11 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll:hover {
+  color: #fd9222;
 }
 
 .scroll-btn {
@@ -183,18 +209,33 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll:hover .scroll-btn {
+  background-color: #fd9222;
 }
 
 .scroll-icon {
   fill: #fd9222;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll:hover .scroll-icon {
+  fill: white;
 }
 
 @media screen and (min-width: 768px) {
-  .hero .container {
+  .hero-container {
     background-image: url(../img/hero-bg-tablet-min.jpg);
     height: 890px;
-    border-radius: 30px;
     padding: 40px 40px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero-container {
+      background-image: url(../img/hero-bg-tablet-2x-min.jpg);
+    }
   }
 
   .hero-title {
@@ -212,11 +253,15 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
-  .hero .container {
+  .hero-container {
     background-image: url(../img/hero-bg-desktop-min.jpg);
     height: 600px;
-    border-radius: 30px;
-    padding-top: 381px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero-container {
+      background-image: url(../img/hero-bg-desktop-2x-min.jpg);
+    }
   }
 
   .hero {
@@ -232,7 +277,7 @@ img {
   background-color: rgba(30, 24, 35);
 }
 
-.advantages .container {
+.advantages-container {
   padding: 20px 0;
 }
 
@@ -283,7 +328,7 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .advantages .container {
+  .advantages-container {
     padding: 50px 0;
   }
 
@@ -323,7 +368,7 @@ img {
 
 /* ----------Ingredients----------- */
 
-.ingredients .container {
+.ingredients-container {
   padding: 80px 0;
 }
 
@@ -340,10 +385,6 @@ img {
 .ingredients-card {
   position: relative;
   overflow: hidden;
-}
-
-.flip-checkbox {
-  display: none;
 }
 
 .front-card {
@@ -444,14 +485,8 @@ img {
   line-height: 18px;
 }
 
-@media screen and (max-width: 767px) {
-  .ingredients-card.hide-mobile {
-    display: none;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  .ingredients .container {
+  .ingredients-container {
     padding: 100px 0;
   }
 
@@ -486,7 +521,7 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
-  .ingredients .container {
+  .ingredients-container {
     padding: 120px 0;
   }
 
@@ -696,12 +731,6 @@ img {
   margin-bottom: 80px;
 }
 
-@media screen and (max-width: 767px) {
-  .sellers-card.hide-mobile {
-    display: none;
-  }
-}
-
 .sellers-cards-title {
   font-size: 18px;
   font-weight: 600;
@@ -761,7 +790,7 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .reviews-card.hide-mobile {
+  .hide-mobile {
     display: none;
   }
 }
@@ -783,6 +812,16 @@ img {
   border: solid 1px rgba(253, 146, 34);
   margin: 0 auto 80px;
   color: inherit;
+}
+
+.review-btn {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-btn:hover {
+  color: #ffffff;
+  background-color: #fd9222;
 }
 
 .avatar-img {
@@ -837,7 +876,7 @@ img {
   color: rgba(255, 255, 255);
 }
 
-.footer .container {
+.footer-container {
   padding: 32px 0;
 }
 
@@ -878,8 +917,14 @@ img {
 .social-icon {
   fill: white;
   stroke-width: 1.5px;
-  stroke: #111111;
+  stroke: rgba(30, 24, 35, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.social-icon:hover {
+  fill: #fd9222;
+}
+
 .footer-contact-title {
   font-size: 14px;
   font-weight: 500;
@@ -916,10 +961,36 @@ img {
   border-radius: 30px;
   font-weight: 400;
   outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-input:focus,
+.subscribe-input:active {
+  border-color: #fd9222;
+}
+
+.subscribe-btn,
+.hero-btn {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-btn:hover,
+.hero-btn:hover {
+  background-color: rgba(252, 241, 224, 1);
+  color: rgba(253, 146, 34, 1);
+}
+
+.footer-contacts-item {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-contacts-item:hover {
+  color: #fd9222;
 }
 
 @media screen and (min-width: 768px) {
-  .footer .container {
+  .footer-container {
     padding: 50px 0;
   }
 
