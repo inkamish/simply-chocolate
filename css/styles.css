@@ -255,8 +255,8 @@ img {
 .hero-btn-link {
   background-color: transparent;
   border: solid 1px white;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) background-color 250ms
-    cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn-link:hover {
@@ -358,7 +358,7 @@ img {
   padding: 20px 0;
 }
 
-.hidden-title {
+.hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -892,8 +892,8 @@ img {
 }
 
 .review-btn {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-btn:hover {
@@ -1048,8 +1048,8 @@ img {
 
 .subscribe-btn,
 .hero-btn {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-btn:hover,
@@ -1107,5 +1107,187 @@ img {
 
   .subscribe-input {
     min-width: 232px;
+  }
+}
+
+/* -------------------Form------------ */
+
+.modal-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 311px;
+  min-height: 622px;
+  border-radius: 15px;
+  padding: 32px 32px 32px 24px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background: #fcfcfc;
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.close-button-icon {
+  stroke: #111111;
+}
+
+.form-title {
+  text-align: left;
+  margin-bottom: 32px;
+  max-width: 255px;
+  line-height: 24px;
+  letter-spacing: -0.03em;
+}
+
+.form-label-container {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: rgba(64, 64, 64, 0.3);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.form-input,
+.form-input-checkbox {
+  width: 100%;
+  height: 45px;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 8px;
+  padding-left: 43px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus-within {
+  border-color: #fd9222;
+}
+
+.form-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: none;
+  stroke: rgba(64, 64, 64, 1);
+}
+
+.form-label-container:hover .form-icon,
+.form-label-container:focus-within .form-icon {
+  stroke: #fd9222;
+}
+
+.form-comment-label-container {
+  margin-bottom: 18px;
+}
+
+.form-input.comment {
+  resize: none;
+  height: 91px;
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.container-accept-terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.user-privacy-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.policy-file {
+  line-height: 1.3;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #fd9222;
+}
+
+.check-span {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  border: 1px solid #2e2f4266;
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input-checkbox:checked + .user-privacy-label .check-span {
+  background-color: #fd9222;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.form-button {
+  color: white;
+  background-color: #fd9222;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border-radius: 100px;
+  border: none;
+  min-width: 93px;
+  padding: 12px 28px;
+  display: block;
+  margin-right: auto;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: rgba(252, 241, 224, 1);
+  color: #fd9222;
+}
+
+@media screen and (min-width: 768px) {
+  .close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+
+  .modal-form {
+    width: 517px;
+    min-height: 500px;
+    padding: 40px;
+  }
+
+  .form-title {
+    max-width: 298px;
   }
 }
