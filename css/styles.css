@@ -102,7 +102,7 @@ img {
 @media screen and (min-width: 768px) {
   .header {
     padding-top: 24px;
-    padding-bottom: 35px;
+    padding-bottom: 28px;
   }
 
   .nav-list {
@@ -132,6 +132,11 @@ img {
 @media screen and (min-width: 1200px) {
   .logo {
     font-size: 18px;
+    margin-right: auto;
+  }
+
+  .social-header {
+    margin-left: 90px;
   }
 }
 
@@ -445,12 +450,8 @@ img {
 
 /* ----------Ingredients----------- */
 
-.ingredients-container {
+.ingredients {
   padding: 80px 0;
-}
-
-.ingredients-title {
-  margin: 0 auto 32px;
 }
 
 .ingredients-list {
@@ -505,6 +506,11 @@ img {
 
 .front-card img {
   margin: 0 auto 16px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ingredients-card:hover .front-card img {
+  transform: scale(1.2);
 }
 
 .ingredients-card-title {
@@ -563,13 +569,14 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .ingredients-container {
+  .ingredients {
     padding: 100px 0;
   }
 
   .ingredients-title {
     max-width: 411px;
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .ingredients-list {
@@ -598,7 +605,7 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
-  .ingredients-container {
+  .ingredients {
     padding: 120px 0;
   }
 
@@ -635,8 +642,8 @@ img {
 
 /* -----------Made------------- */
 
-.made-title {
-  margin-bottom: 32px;
+.made {
+  padding-bottom: 80px;
 }
 
 .made-img {
@@ -646,7 +653,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 80px;
 }
 
 .made-text-container {
@@ -688,14 +694,6 @@ img {
     border-radius: 15px;
   }
 
-  .made-content {
-    margin-bottom: 100px;
-  }
-
-  .made-title {
-    margin-bottom: 50px;
-  }
-
   .made-subtitle {
     max-width: 350px;
   }
@@ -706,6 +704,9 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .made {
+    padding-bottom: 120px;
+  }
   .made-content {
     flex-direction: row;
     gap: 32px;
@@ -716,15 +717,14 @@ img {
   }
 }
 
-.product-title {
-  margin-bottom: 22px;
+.products {
+  padding-bottom: 80px;
 }
 
 .product-list {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  margin-bottom: 80px;
 }
 
 .product-card {
@@ -764,14 +764,10 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .product-title {
-    margin-bottom: 50px;
-  }
   .product-list {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
-    margin-bottom: 100px;
   }
 
   .product-card {
@@ -786,6 +782,9 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .products {
+    padding-bottom: 120px;
+  }
   .product-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -800,12 +799,48 @@ img {
 
 /* ---------- Sellers ---------- */
 
-.sellers-title {
-  margin-bottom: 32px;
+.sellers {
+  padding-bottom: 80px;
 }
 
-.sellers-list {
-  margin-bottom: 80px;
+.sellers-card-overlay {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+
+.sellers-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 178px 40px 0;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sellers-card:hover .sellers-overlay-text {
+  transform: translateY(0%);
+}
+
+.sellers-card-img {
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sellers-card:hover .sellers-card-img {
+  filter: blur(3px);
+}
+
+.sellers-card {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sellers-card:hover {
+  transform: scale(1.05);
 }
 
 .sellers-cards-title {
@@ -816,20 +851,15 @@ img {
   text-align: center;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-top: none;
-  border-radius: 0 0 15px 15px;
   overflow: hidden;
   background-color: white;
+  border-radius: 0 0 15px 15px;
 }
 
 @media screen and (min-width: 768px) {
-  .sellers-title {
-    margin-bottom: 50px;
-  }
-
   .sellers-list {
     display: flex;
     gap: 16px;
-    margin-bottom: 100px;
   }
 
   .sellers-card {
@@ -846,6 +876,10 @@ img {
 @media screen and (min-width: 1200px) {
   .sellers-card {
     flex-basis: calc((100% - 32px) / 3);
+  }
+
+  .sellers {
+    padding-bottom: 80px;
   }
 }
 
@@ -879,6 +913,10 @@ img {
   margin-bottom: 24px;
 }
 
+.reviews {
+  padding-bottom: 80px;
+}
+
 .review-card-text {
   text-align: center;
   opacity: 0.7;
@@ -887,7 +925,7 @@ img {
 .review-btn {
   background-color: transparent;
   border: solid 1px rgba(253, 146, 34);
-  margin: 0 auto 80px;
+  margin: 0 auto;
   color: inherit;
 }
 
@@ -928,7 +966,6 @@ img {
   .review-btn {
     font-size: 18px;
     padding: 14px 40px;
-    margin-bottom: 100px;
   }
 }
 
@@ -939,6 +976,9 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .reviews {
+    padding-bottom: 120px;
+  }
   .reviews-list {
     gap: 28px;
   }
@@ -1145,7 +1185,6 @@ img {
 
 .form-title {
   text-align: left;
-  margin-bottom: 32px;
   max-width: 255px;
   line-height: 24px;
   letter-spacing: -0.03em;
@@ -1289,5 +1328,6 @@ img {
 
   .form-title {
     max-width: 298px;
+    margin-bottom: 40px;
   }
 }

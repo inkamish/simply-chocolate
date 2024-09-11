@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: rgba(250, 250, 250);
   line-height: 1.29;
   color: rgba(17, 17, 17);
@@ -8,7 +8,6 @@ body {
 }
 
 .btn {
-  font-size: 14px;
   font-weight: 600;
   color: white;
   padding: 12px 28px;
@@ -32,6 +31,7 @@ body {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 @media screen and (min-width: 768px) {
@@ -41,6 +41,7 @@ body {
 
   .title {
     font-size: 24px;
+    margin-bottom: 50px;
   }
 }
 
